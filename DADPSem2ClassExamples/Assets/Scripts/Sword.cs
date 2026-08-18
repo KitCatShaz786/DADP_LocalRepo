@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class Warrior : Character
+public class Sword : Weapon
 {
-        public string Weapon;
-        
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +14,8 @@ public class Warrior : Character
         
     }
 
-    public Warrior(string name, string weapon) : base(name)
+    public override void Attack()
     {
-        Weapon = weapon;
+        Debug.Log("The sword slashes through the air.");
     }
 }
