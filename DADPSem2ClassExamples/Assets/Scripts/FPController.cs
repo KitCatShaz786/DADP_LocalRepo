@@ -28,6 +28,10 @@ public class FPController : MonoBehaviour
     private Vector3 velocity; // Stores the player's current vertical movement, including gravity.
     private float verticalRotation = 0f;
 
+    [Header("Animation Settings")]
+    [Space(5)]
+    public Animator animator;
+
     public GameObject MainCamera;
 
 
