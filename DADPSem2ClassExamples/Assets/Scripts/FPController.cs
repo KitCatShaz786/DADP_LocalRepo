@@ -6,14 +6,17 @@ public class FPController : MonoBehaviour
     public float moveSpeed = 5f;
     public float gravity = -9.81f; // Controls the downward force applied to the player. The value is negative because gravity pulls the player down.
     public float jumpHeight = 1.5f;
+
     [Header("Look Settings")]
     public Transform cameraTransform;
     public float lookSensitivity = 2f;
     public float verticalLookLimit = 90f;
+
     [Header("Shooting")]
     public GameObject bulletPrefab;
     public Transform gunPoint;
     public float bulletForce = 500f;
+
     [Header("Crouch Settings")]
     public float crouchHeight = 1f;
     public float standHeight = 2f;
@@ -24,6 +27,9 @@ public class FPController : MonoBehaviour
     private Vector2 lookInput;
     private Vector3 velocity; // Stores the player's current vertical movement, including gravity.
     private float verticalRotation = 0f;
+
+    public GameObject MainCamera;
+
 
     // Awake runs once when the GameObject is first loaded.
     
@@ -136,4 +142,26 @@ public class FPController : MonoBehaviour
             }
         }
     }
+
+    private void Interact()
+    {
+        /*
+        Ray ray = new Ray(MainCamera.position, MainCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out RaycastHit, 3))
+        {
+            if (hit.collider.CompareTag("Door"))
+            {
+                Animator doorAnimator = hit.collider.GetComponent<Animator>();
+
+                if (doorAnimator != null)
+                {
+                doorAnimator.setTrigger("OpenDoor");
+                }
+            } 
+        }
+        */
+    }
+
 }
